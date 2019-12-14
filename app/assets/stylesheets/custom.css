@@ -1,0 +1,9 @@
+.wd75{
+  width: 75%;
+}
+.wd50{
+  width: 50% !important;
+}
+#inlineLP h1, #inlineLP a {
+  display: inline;    
+}

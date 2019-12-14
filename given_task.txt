@@ -1,0 +1,22 @@
+Practical Test (ROR)
+
+1.(Done) Build a Rails application, that have basic features like Login, Registration, Forgot password, etc...
+2.(Done) After login user can able preform CURD operation on product list.
+3. User can able to create one product (using form) or multiple products (using csv file-browse button).
+4.(Done) Create an API to add single product using AuthenticationToken.   
+
+Key Notes:
+
+*(Done) Product’s entity will have: name, price, description etc.
+* Use Sidekiq or Any other gem to process csv in background.
+*(Done) Take any Database as Storage.
+*(Done) Add Appropriate Validations.
+*(Done) Use scaffold, Devise or any other gem if you want.
+
+
+At the end you must prepare a document that will have the following things mentioned:
+
+1.(Done) Remaining functionality (if any)
+2.(Done) Which type of problem(s) you’ve faced during the test? (if any)
+3.(Done) Steps that needs to be executed before running your application (if you have used some gems or other libraries).
+4.(Done) Prepare a release note of the features you implemented

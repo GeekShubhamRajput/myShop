@@ -1,0 +1,24 @@
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="<%= root_path %>">My Shop</a>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Products", products_path %></li>
+      </ul>
+    
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>      
+          <li><%= link_to "SignOut", destroy_user_session_path, method: :delete, class: "float-right" %></li>
+        <% else %>
+          <li><%= link_to "SignIn", new_user_session_path, class: "float-right" %></li>
+          <li><%= link_to "SignUp", new_user_registration_path, class: "float-right" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

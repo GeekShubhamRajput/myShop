@@ -1,0 +1,37 @@
+<div id="inlineLP">
+  <h1>Listing Products</h1>
+  <%= link_to "New Product", new_product_path, class: "btn btn-primary pull-right" %>
+</div>
+
+<br />
+
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @products.blank? %>
+      <tr> 
+        <td colspan="3">No Product found</td>
+      </tr>
+    <% else %>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td>
+            <%= link_to 'Details', product, class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_product_path(product), class: "btn btn-primary" %>
+            <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
