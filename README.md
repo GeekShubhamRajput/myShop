@@ -6,10 +6,14 @@
 
 #### Use created gemset version ####
   $ rvm gemset use myshop
-  $ bundle install 
+  
+  $ bundle install
 
 #### Database creation ####
   Install postgress in your system and change username and password in config/database.yml file
+  
   $ rake db:create
+  
   $ rake db:migrate
-
+  
+  $ rake db:seed
