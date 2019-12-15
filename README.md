@@ -17,3 +17,11 @@
   $ rake db:migrate
   
   $ rake db:seed
+
+#### Sidekiq and Background Jobs Config ####
+  
+  $ sudo apt install redis-server
+
+  $ redis-server (run this command in different tab)
+
+  $ sidekiq (run this command in different tab)
