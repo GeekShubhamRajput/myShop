@@ -48,6 +48,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def import
+    redirect_to bulk_import_url, notice: 'Please choose a file.' and return if params["file"].blank?
+
+    Product.import(params[:file])
+    redirect_to root_url, notice: "Products imported."
+  end
+
+  def bulk_import; end
+
+  def sample_file
+    respond_to do |format|
+      format.csv { send_data Product.to_csv }
+    end
+  end
+
   private
 
     def set_product

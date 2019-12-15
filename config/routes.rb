@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :products
+
   devise_for :users
   
   root 'products#index'
@@ -11,5 +11,11 @@ Rails.application.routes.draw do
       delete 'logout', to: 'users#logout'      
     end
   end
+
+  resources :products do
+    collection { post :import }
+    collection { get :sample_file }
+  end
+  get 'bulk_import', to: 'products#bulk_import'
 
 end
