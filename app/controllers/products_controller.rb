@@ -50,8 +50,7 @@ class ProductsController < ApplicationController
 
   def import
     redirect_to bulk_import_url, notice: 'Please choose a file.' and return if params["file"].blank?
-
-    Product.import(params[:file])
+    ProductImportWorker.perform_async(params[:file].path)
     redirect_to root_url, notice: "Products imported."
   end
 

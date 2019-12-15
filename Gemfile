@@ -50,3 +50,4 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'simple_token_authentication'
 gem 'will_paginate-bootstrap'
+gem 'sidekiq'
